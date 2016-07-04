@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/SegmentLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:minHeight="120dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/relative_layout">
+    <Mvx.MvxImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/CompanyImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        local:MvxBind="ImageUrl ImageUrl" />
+    <Mvx.MvxImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/CompanyTypeBackgroundView"
+        android:layout_toRightOf="@id/CompanyImageView"
+        android:layout_below="@id/CompanyImageView"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginBottom="15dp"
+        local:MvxBind="ImageUrl CompanyTypeBackgroundIcon" />
+    <Mvx.MvxImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/CompanyTypeIconView"
+        android:layout_toRightOf="@id/CompanyImageView"
+        android:layout_below="@id/CompanyImageView"
+        android:layout_marginLeft="-17dp"
+        android:layout_marginTop="-32dp"
+        android:layout_marginBottom="15dp"
+        android:background="@android:color/transparent"
+        local:MvxBind="ImageUrl CompanyTypeIcon" />
+    <TextView
+        android:id="@+id/RecommendationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28px"
+        android:fontFamily="Roboto"
+        android:textColor="#cc8400"
+        android:layout_toRightOf="@id/CompanyImageView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        local:MvxBind="Text RecommendedRide" />
+    <TextView
+        android:id="@+id/CompanyNameText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="35px"
+        android:layout_toRightOf="@id/CompanyImageView"
+        android:layout_below="@id/RecommendationText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="Roboto"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        local:MvxBind="Text CompanyTitle" />
+    <TextView
+        android:id="@+id/CompanyTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/CompanyImageView"
+        android:layout_below="@id/CompanyNameText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="22px"
+        android:fontFamily="Roboto"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        local:MvxBind="Text CompanyTypeText" />
+    <ImageButton
+        android:id="@+id/TagButton"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/tag" />
+    <TextView
+        android:id="@+id/DistanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/CompanyTypeText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="22px"
+        android:fontFamily="Roboto"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_below="@id/CompanyNameText"
+        local:MvxBind="Text CompanyDistanceFromCurrLocation" />
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/MapFragmentList"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/CompanyTypeText"
+        android:layout_toRightOf="@id/CompanyImageView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        local:cameraZoom="15"
+        local:mapType="normal"
+        android:layout_marginBottom="15dp"
+        android:apiKey="@string/google_maps_key" />
+    <TextView
+        android:id="@+id/NoOfOffersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CompanyImageView"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        local:MvxBind="Text NoOfOffers"
+        android:fontFamily="Roboto"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="32px" />
+    <RelativeLayout
+        android:id="@+id/OfferLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/offers_background"
+        android:layout_below="@id/NoOfOffersTextView"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center">
+        <Mvx.MvxImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/OfferImage"
+            android:layout_marginLeft="15dp"
+            local:MvxBind="ImageUrl OfferImageUrl" />
+        <TextView
+            android:id="@+id/OfferText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/OfferImage"
+            android:layout_marginLeft="15dp"
+            android:textSize="40px"
+            android:fontFamily="Roboto"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            local:MvxBind="Text OfferText" />
+        <ImageButton
+            android:id="@+id/OfferTagButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/tag" />
+    </RelativeLayout>
+</RelativeLayout>

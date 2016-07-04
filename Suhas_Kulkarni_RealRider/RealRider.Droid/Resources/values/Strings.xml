@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ListText">LIST</string>
+  <string name="MapText">MAP</string>
+  <string name="ShowText">Show:</string>
+  <string name="WhereText">Where:</string>
+  <string name="open_drawer">Open</string>
+  <string name="close_drawer">Close</string>
+  <string name="timeline">Timeline</string>
+  <string name="discover">Discover</string>
+  <string name="saved">Saved</string>
+  <string name="profile">Profile</string>
+  <string name="google_maps_key">AIzaSyAitwPQpY88FaYd-VwXCcBAmivAP3i1NU8</string>
+</resources>
